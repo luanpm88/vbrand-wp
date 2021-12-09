@@ -1,7 +1,7 @@
 <?php
 /**
  * @wordpress-plugin
- * Plugin Name:       vBrand Insider
+ * Plugin Name:       vBrand WP
  * Plugin URI:        https://acellemail.com/
  * Description:       A plugin.
  * Version:           1.0
