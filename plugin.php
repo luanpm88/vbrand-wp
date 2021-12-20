@@ -9,6 +9,13 @@
  * Author URI:        https://acellemail.com/
  */
 
+// register jquery and style on initialization
+function vbrand_register_script() {
+    wp_register_script( 'vbrand_js', plugins_url('/assets/vbrand.js', __FILE__), array('jquery'), '2.5.1' );
+    wp_register_style( 'vbrand_css', plugins_url('/assets/vbrand.css', __FILE__), false, '1.0.0', 'all');
+}
+add_action('init', 'vbrand_register_script');
+
 // iframe inside acelle config
 function vbrand_enqueue_admin_script( $hook ) {
     // WP auto login
@@ -23,7 +30,8 @@ function vbrand_enqueue_admin_script( $hook ) {
     }
 
     // add script for custom iframe layouts inside acelle
-    wp_enqueue_script( 'vbrand_enqueue_admin_script', '/vbrand/vbrand.js', array(), '1.0' );
+    // wp_enqueue_style('vbrand_css');
+    wp_enqueue_script('vbrand_js');
 
     // remove header for iframe inside acelle
     header_remove('X-Frame-Options');

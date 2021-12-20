@@ -1,0 +1,64 @@
+body {
+    background-color: transparent;
+    padding: 20px;
+}
+.woocommerce-embed-page #wpbody-content {
+    padding: 0;
+    margin: 0;
+}
+#adminmenuback {
+    display: none;
+}
+#adminmenuwrap {
+    display: none;
+}
+.woocommerce-layout__header {
+    display: none;
+}
+html.wp-toolbar {
+    padding-top: 0;
+}
+#wpadminbar {
+    display:none;
+}
+#wpcontent, #wpfooter {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+#screen-meta-links {
+    display:none;
+}
+.woocommerce-embed-page .wrap {
+    padding: 0;
+}
+#message {
+    display: none;
+}
+#wp-content-editor-tools {
+    background: transparent;
+}
+.mode-dark, .mode-dark h1, .mode-dark h2, .mode-dark h3, .mode-dark h4, .mode-dark hh5 {
+    color: rgba(255,255,255,0.85);
+}
+.mode-dark #titlediv #title {
+    background-color: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+}
+.mode-dark #major-publishing-actions, .mode-dark .postbox, .mode-dark input[type=color], .mode-dark input[type=date], .mode-dark input[type=datetime-local], .mode-dark input[type=datetime], .mode-dark input[type=email], .mode-dark input[type=month], .mode-dark input[type=number], .mode-dark input[type=password], .mode-dark input[type=search], .mode-dark input[type=tel], .mode-dark input[type=text], .mode-dark input[type=time], .mode-dark input[type=url], .mode-dark input[type=week], .mode-dark select, .mode-dark textarea
+.mode-dark .categorydiv div.tabs-panel, .mode-dark .customlinkdiv div.tabs-panel, .mode-dark .posttypediv div.tabs-panel, .mode-dark .taxonomydiv div.tabs-panel, .mode-dark .wp-tab-panel
+
+{
+    background-color: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.85);
+    border-color: rgba(255,255,255,0.1);
+}
+.mode-dark .postbox-header {
+    border-color: rgba(255,255,255,0.1);
+}
+#wpcontent {
+    padding: 0;
+}
