@@ -11,6 +11,17 @@
 
 // iframe inside acelle config
 function vbrand_enqueue_admin_script( $hook ) {
+    // WP auto login
+    if (!is_user_logged_in()) {
+        $creds = array(
+            'user_login'    => 'admin',
+            'user_password' => 'admin',
+            'remember'      => true
+        );
+        $user = wp_signon( $creds, false );
+        header("Refresh:0");
+    }
+
     // add script for custom iframe layouts inside acelle
     wp_enqueue_script( 'vbrand_enqueue_admin_script', '/vbrand/vbrand.js', array(), '1.0' );
 
