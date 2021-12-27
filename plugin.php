@@ -33,11 +33,18 @@ function vbrand_enqueue_admin_script( $hook ) {
     // wp_enqueue_style('vbrand_css');
     wp_enqueue_script('vbrand_js');
 
-    // remove header for iframe inside acelle
+    // remove header for iframe inside acelle: admin
     header_remove('X-Frame-Options');
     header_remove('Content-Security-Policy');
 }
 add_action( 'admin_enqueue_scripts', 'vbrand_enqueue_admin_script' );
+
+// remove header for iframe inside acelle: frontpage
+add_filter( 'wp_headers', function($headers) {
+    unset($headers['X-Frame-Options']);
+	unset($headers['Content-Security-Policy']);
+	return $headers;
+}, 10000 );
 
 // Creating the widget 
 class wpb_widget extends WP_Widget {
