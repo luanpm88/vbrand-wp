@@ -46,6 +46,11 @@ add_filter( 'wp_headers', function($headers) {
 	return $headers;
 }, 10000 );
 
+// API
+add_action( 'rest_api_init', function () {
+    require_once('api.php');
+} );
+
 // Creating the widget 
 class wpb_widget extends WP_Widget {
  
