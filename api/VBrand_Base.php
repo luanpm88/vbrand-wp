@@ -14,6 +14,7 @@ class VBrand_Base extends WP_REST_Controller {
 
         if ($result['status'] !== 'success') {
             header("HTTP/1.1 401 Unauthorized");
+            echo "Unauthorized!";
             exit;
         }
     }
