@@ -12,6 +12,12 @@ body {
 #adminmenuwrap {
     display: none;
 }
+.notice-warning {
+    display: none;
+}
+#vc_license-activation-notice {
+    display: none;
+}
 .woocommerce-layout__header {
     display: none;
 }
