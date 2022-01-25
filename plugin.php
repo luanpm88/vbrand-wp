@@ -17,18 +17,7 @@ function vbrand_register_script() {
 add_action('init', 'vbrand_register_script');
 
 // iframe inside acelle config
-function vbrand_enqueue_admin_script( $hook ) {
-    // WP auto login
-    if (!is_user_logged_in()) {
-        $creds = array(
-            'user_login'    => 'admin',
-            'user_password' => 'admin',
-            'remember'      => true
-        );
-        $user = wp_signon( $creds, false );
-        header("Refresh:0");
-    }
-
+function vbrand_remove_headers( $hook ) {
     // add script for custom iframe layouts inside acelle
     // wp_enqueue_style('vbrand_css');
     wp_enqueue_script('vbrand_js');
@@ -37,7 +26,30 @@ function vbrand_enqueue_admin_script( $hook ) {
     header_remove('X-Frame-Options');
     header_remove('Content-Security-Policy');
 }
-add_action( 'admin_enqueue_scripts', 'vbrand_enqueue_admin_script' );
+add_action( 'admin_enqueue_scripts', 'vbrand_remove_headers' );
+
+// auto login
+function vbrand_auto_login( $hook ) {
+    if ( defined( 'WP_ADMIN' ) ) {
+        // WP auto login
+        if (!is_user_logged_in()) {
+            // ssss;
+            $creds = array(
+                'user_login'    => 'luan',
+                'user_password' => '123456',
+                'remember'      => true
+            );
+            $user = wp_signon( $creds, false );
+            if ( is_wp_error( $user ) ) {
+                echo $user->get_error_message();die();
+            }
+            header("Refresh:0");
+            die();
+        }
+    }
+    
+}
+add_action( 'init', 'vbrand_auto_login', 1 );
 
 // remove header for iframe inside acelle: frontpage
 add_filter( 'wp_headers', function($headers) {
