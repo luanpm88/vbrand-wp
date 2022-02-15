@@ -35,8 +35,8 @@ function vbrand_auto_login( $hook ) {
         if (!is_user_logged_in()) {
             // ssss;
             $creds = array(
-                'user_login'    => 'luan',
-                'user_password' => '123456',
+                'user_login'    => 'admin',
+                'user_password' => 'admin',
                 'remember'      => true
             );
             $user = wp_signon( $creds, false );
