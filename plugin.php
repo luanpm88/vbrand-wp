@@ -46,8 +46,7 @@ function vbrand_auto_login( $hook ) {
             header("Refresh:0");
             die();
         }
-    }
-    
+    }    
 }
 add_action( 'init', 'vbrand_auto_login', 1 );
 
