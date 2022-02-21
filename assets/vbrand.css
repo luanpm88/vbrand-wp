@@ -1,6 +1,27 @@
 body {
     background-color: transparent;
+    margin: 0;
+    padding-right: 20px;
+}
+.wrap {
+    margin: 0;
+}
+#wpfooter, #wpadmin_overlay_top {
+    display: none;
+}
+#rs_welcome_header_area, #rs_overview_menu, #add_new_slider_wrap, #modulesoverviewheader, #plugin_update_row, #plugin_activation_row, #plugin_news_row,
+.div150, .div100 {
+    display:  none!important;
+}
+.toplevel_page_revslider, .toplevel_page_revslider #wpwrap, .toplevel_page_revslider #wpwrap #wpcontent,
+.toplevel_page_revslider, .toplevel_page_revslider #wpwrap, .toplevel_page_revslider #wpwrap #wpcontent, .toplevel_page_revslider #rs_overview {
+    background-color: transparent;
+}
+#rs_overview {
     padding: 0;
+}
+.overview_elements {
+    width: 100%;
 }
 .woocommerce-embed-page #wpbody-content {
     padding: 0;
@@ -67,4 +88,7 @@ html.wp-toolbar {
 }
 #wpcontent {
     padding: 0;
+}
+#existing_sliders {
+    margin-top: 10px;
 }
