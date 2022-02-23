@@ -92,3 +92,9 @@ html.wp-toolbar {
 #existing_sliders {
     margin-top: 10px;
 }
+.woocommerce-layout__primary {
+    margin: 1px;
+}
+.woocommerce-layout .woocommerce-layout__main {
+    padding-right: 0;
+}
