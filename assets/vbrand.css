@@ -110,3 +110,6 @@ html.wp-toolbar {
 .form-table, .form-table td, .form-table td p, .form-table th {
     font-size: 0.9rem;
 }
+.vc_subnav-fixed {
+    top: 0!important;
+}
