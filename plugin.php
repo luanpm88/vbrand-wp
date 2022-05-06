@@ -31,21 +31,38 @@ add_action( 'admin_enqueue_scripts', 'vbrand_remove_headers' );
 // auto login
 function vbrand_auto_login( $hook ) {
     if ( defined( 'WP_ADMIN' ) ) {
-        // WP auto login
-        if (!is_user_logged_in()) {
-            // ssss;
-            $creds = array(
-                'user_login'    => 'admin',
-                'user_password' => 'admin',
-                'remember'      => true
-            );
-            $user = wp_signon( $creds, false );
-            if ( is_wp_error( $user ) ) {
-                echo $user->get_error_message();die();
+        // // WP auto login
+        // if (!is_user_logged_in()) {
+        //     // ssss;
+        //     $creds = array(
+        //         'user_login'    => 'admin',
+        //         'user_password' => 'admin',
+        //         'remember'      => true
+        //     );
+        //     $user = wp_signon( $creds, false );
+        //     if ( is_wp_error( $user ) ) {
+        //         echo $user->get_error_message();die();
+        //     }
+        //     header("Refresh:0");
+        //     die();
+        // }
+
+        if(!is_user_logged_in()){
+            $username = "admin";
+            if($user=get_user_by('login',$username)){
+    
+                clean_user_cache($user->ID);
+        
+                wp_clear_auth_cookie();
+                wp_set_current_user( $user->ID );
+                wp_set_auth_cookie( $user->ID , true, false);
+        
+                update_user_caches($user);
+    
+                header("Refresh:0");
+                exit;
             }
-            header("Refresh:0");
-            die();
-        }
+        }  
     }    
 }
 add_action( 'init', 'vbrand_auto_login', 1 );
