@@ -18,7 +18,7 @@ body {
 #wpfooter, #wpadmin_overlay_top {
     display: none;
 }
-.notice.notice-info {
+.notice {
     display: none!important;
 }
 #rs_welcome_header_area, #rs_overview_menu, #add_new_slider_wrap, #modulesoverviewheader, #plugin_update_row, #plugin_activation_row, #plugin_news_row,
